@@ -21,11 +21,11 @@ public class Test {
 
         // Updated locator using the id="UserName" from the HTML inspect element
         driver.findElement(By.id("UserName"))
-            .sendKeys("ckim");
+            .sendKeys("testusername");
 
         // Enter your login password
         driver.findElement(By.id("Password"))
-            .sendKeys("18742361!Ladot");
+            .sendKeys("testpassword");
 
         //Locate by input value and click
         driver.findElement(By.xpath("//input[@value='Log On']"))
