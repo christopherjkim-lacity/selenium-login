@@ -57,3 +57,4 @@ C:\Users\chris\Documents\vsCode\StreetInputsApp\obj\Debug\net10.0\refint\StreetI
 C:\Users\chris\Documents\vsCode\StreetInputsApp\obj\Debug\net10.0\StreetInputsApp.pdb
 C:\Users\chris\Documents\vsCode\StreetInputsApp\obj\Debug\net10.0\StreetInputsApp.genruntimeconfig.cache
 C:\Users\chris\Documents\vsCode\StreetInputsApp\obj\Debug\net10.0\ref\StreetInputsApp.dll
+C:\Users\chris\Documents\vsCode\StreetInputsApp\obj\Debug\net10.0\StreetInputsApp.sourcelink.json

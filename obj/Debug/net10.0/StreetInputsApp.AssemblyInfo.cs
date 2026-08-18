@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("StreetInputsApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+48b6d2c9ba61f9b361a4ec982d5f07903faf86b8")]
 [assembly: System.Reflection.AssemblyProductAttribute("StreetInputsApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("StreetInputsApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
