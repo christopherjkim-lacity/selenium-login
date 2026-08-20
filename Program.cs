@@ -17,19 +17,21 @@ namespace LoginTest
             // Connection string built for Microsoft Azure SQL Database
             string connectionString = new SqlConnectionStringBuilder
             {
-                DataSource = "ladotbsgsqlsrv.westus.cloudapp.azure.com.database.windows.net,1433",
+                DataSource = "ladotbsgsqlsrv.westus.cloudapp.azure.com",
                 InitialCatalog = "eWork",
                 UserID = "cxKim",
                 Password = "415294!Lacity",
                 Encrypt = true,
-                TrustServerCertificate = false,
+                TrustServerCertificate = true,
                 ConnectTimeout = 30
             }.ConnectionString;
 
             // Parameterized SELECT query to prevent SQL Injection
-            string selectSql = @"SELECT [Sign_WO_Id] 
-                                FROM [eWork].[dbo].[Sign_WO] 
-                                WHERE [Primary_St] = @PrimaryStreet AND [Cross_St] = @CrossStreet";
+            string selectSql = @"SELECT w.[Sign_WO_Id], a.[File_Path]
+                    FROM [eWork].[dbo].[Sign_WO] w LEFT JOIN [eWork].[dbo].[Attachment] a
+                    ON  w.[Sign_WO_Id] = a.[WO_Id]
+                    WHERE (w.[Primary_St] = @PrimaryStreet AND w.[Cross_St] = @CrossStreet)
+                       OR (w.[Primary_St] = @CrossStreet AND w.[Cross_St] = @PrimaryStreet)";
 
             try
             {
@@ -52,6 +54,9 @@ namespace LoginTest
                                 // Fetches column 0 (Sign_WO_Id)
                                 string workOrderId = reader["Sign_WO_Id"].ToString();
                                 Console.WriteLine($"Sign Work Order ID: {workOrderId}");
+                                command.Parameters.AddWithValue("@WO_ID", workOrderId ?? (object)DBNull.Value);
+                                string filePath = reader["File_Path"].ToString();
+                                Console.WriteLine($"File Path For WO ID: {filePath}");
                             }
                         }
                     }
