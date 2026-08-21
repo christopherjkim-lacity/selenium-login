@@ -73,7 +73,7 @@ namespace LoginTest
                             }
                         }
 
-                        eWorksSearch(fullURLs);
+                        eWorksSearch(fullURLs, primaryStreet, crossStreet);
                     }
                 }
             }
@@ -82,7 +82,7 @@ namespace LoginTest
                 Console.WriteLine($"Database Error: {e.Message}");
             }
         }
-        static void eWorksSearch(List<string> fullURLs)
+        static void eWorksSearch(List<string> fullURLs, string primaryStreet, string crossStreet)
         {
             var driver = new ChromeDriver();
             driver.Url = "http://myladot.lacity.org/eWork/Account/LogOn";
@@ -108,6 +108,27 @@ namespace LoginTest
 
             //Click on checkbox "cbALLWO"
             wait.Until(d => d.FindElement(By.Id("cbALLWO"))).Click();
+
+            //Input primary street
+            var streetInput = wait.Until(d => d.FindElement(By.Id("txtPrimary_Street")));
+            streetInput.SendKeys(primaryStreet);
+            Thread.Sleep(500);
+            streetInput.SendKeys(Keys.ArrowDown);
+            streetInput.SendKeys(Keys.Enter);
+
+            //Input cross street
+            var crossStreetInput = wait.Until(d => d.FindElement(By.Id("txtCross_Street")));
+            crossStreetInput.SendKeys(crossStreet);
+            Thread.Sleep(500);
+            crossStreetInput.SendKeys(Keys.ArrowDown);
+            crossStreetInput.SendKeys(Keys.Enter);
+
+            //Change starting date and search
+            var startDateInput = wait.Until(d => d.FindElement(By.Id("txtDT_From")));
+            startDateInput.Clear();
+            startDateInput.SendKeys("01/01/2000");
+            startDateInput.SendKeys(Keys.Enter);
+            driver.FindElement(By.Id("btnSub")).Click();
 
             //Searches file paths if they exist in the eWorks database
             if (fullURLs.Count != 0){
