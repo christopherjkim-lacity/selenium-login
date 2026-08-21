@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v10.0": {
       "StreetInputsApp/1.0.0": {
         "dependencies": {
-          "Microsoft.Data.SqlClient": "7.0.2"
+          "Microsoft.Data.SqlClient": "7.0.2",
+          "Selenium.WebDriver": "4.47.0"
         },
         "runtime": {
           "StreetInputsApp.dll": {}
@@ -273,6 +274,31 @@
           }
         }
       },
+      "Selenium.WebDriver/4.47.0": {
+        "runtime": {
+          "lib/net8.0/Selenium.WebDriver.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.0.0"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/linux/native/selenium-manager": {
+            "rid": "linux",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx/native/selenium-manager": {
+            "rid": "osx",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win/native/selenium-manager.exe": {
+            "rid": "win",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
       "System.Configuration.ConfigurationManager/9.0.13": {
         "dependencies": {
           "System.Diagnostics.EventLog": "9.0.13",
@@ -476,6 +502,13 @@
       "sha512": "sha512-N4KeF3cpcm1PUHym1RmakkzfkEv3GRMyofVv40uXsQhCQeglr2OHNcUk2WOG51AKpGO8ynGpo9M/kFXSzghwug==",
       "path": "microsoft.sqlserver.server/1.0.0",
       "hashPath": "microsoft.sqlserver.server.1.0.0.nupkg.sha512"
+    },
+    "Selenium.WebDriver/4.47.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-P6tWCztrMNXpA4av0EDEwpw+jPbefH7BtdSU05aAldkCUrZF537uBTkHj+A3EcgpbcGGr6uj61UDy8GO6APhoQ==",
+      "path": "selenium.webdriver/4.47.0",
+      "hashPath": "selenium.webdriver.4.47.0.nupkg.sha512"
     },
     "System.Configuration.ConfigurationManager/9.0.13": {
       "type": "package",
